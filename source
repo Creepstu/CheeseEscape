@@ -1,0 +1,258 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+function hili(what, en)
+    local hl = Instance.new("Highlight", what)
+    hl.Enabled = en
+    hl.FillColor = Color3.fromRGB(255, 255, 0)
+    hl.OutlineTransparency = 1
+end
+
+for _, K in pairs(workspace.FindCheese:GetDescendants()) do
+    if K.Name == "Cheese" then
+        hili(K, false)
+    end
+end
+
+function showrat(what, en)
+    local hl = Instance.new("Highlight", what)
+    hl.Enabled = en
+    hl.FillColor = Color3.fromRGB(255, 0, 0)
+    hl.OutlineTransparency = 1
+end
+
+for T, G in pairs(workspace.Mouse:GetChildren()) do
+    if G.Name == "Mouse" then
+        showrat(G, false)
+    end
+end
+
+local Window = OrionLib:MakeWindow({
+    Name = "Cheese Escape | Screepstu Hub", 
+    HidePremium = false, 
+    SaveConfig = true, 
+    ConfigFolder = "ScreepstuTest",
+    IntroText = "Cheese Escape"
+})
+
+local Tab = Window:MakeTab({
+	Name = "#1",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab2 = Window:MakeTab({
+	Name = "#2",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Destroy all doors",
+	Callback = function()
+      		local door = workspace:FindFirstChild("Door")
+            local door22 = workspace:FindFirstChild("Door22")
+            local door3 = workspace:FindFirstChild("Door3")
+            local doorexit, depoint = workspace:FindFirstChild("DoorExit"), workspace:FindFirstChild("DoorExitPoint")
+            local doorkey = workspace:FindFirstChild("DoorKey")
+            local doorkey10 = workspace:FindFirstChild("DoorKey10")
+            local doorkey2 = workspace:FindFirstChild("DoorKey2")
+            local doorkey3 = workspace:FindFirstChild("DoorKey3")
+            local doorkey6 = workspace:FindFirstChild("DoorKey6")
+            local doorkey7 = workspace:FindFirstChild("DoorKey7")
+            local doorkey9 = workspace:FindFirstChild("DoorKey9")
+            local doornewmouse = workspace:FindFirstChild("DoorNewMouse")
+            local doorpoint2 = workspace:FindFirstChild("DoorPoint2")
+            local doorpoint22 = workspace:FindFirstChild("DoorPoint22")
+
+            if door then
+                door:Destroy()
+            end
+            
+            if door22 then
+                door22:Destroy()
+            end
+            
+            if door3 then
+                door3:Destroy()
+            end
+            
+            if doorexit then
+                doorexit:Destroy()
+            end
+            
+            if doorkey then
+                doorkey:Destroy()
+            end
+            
+            if doorkey10 then
+                doorkey10:Destroy()
+            end
+            
+            if doorkey2 then
+                doorkey2:Destroy()
+            end
+            
+            if doorkey3 then
+                doorkey3:Destroy()
+            end
+            
+            if doorkey6 then
+                doorkey6:Destroy()
+            end
+            
+            if doorkey7 then
+                doorkey7:Destroy()
+            end
+            
+            if doorkey9 then
+                doorkey9:Destroy()
+            end
+            
+            if doornewmouse then
+                doornewmouse:Destroy()
+            end
+            
+            if doorpoint2 then
+                doorpoint2:Destroy()
+            end
+            
+            if doorpoint22 then
+                doorpoint22:Destroy()
+            end
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Get all cheeses",
+	Callback = function()
+        if fireclickdetector then
+      	    for x, y in pairs(workspace.FindCheese:GetDescendants()) do
+                if y:IsA("ClickDetector") and y.Parent.Name == "Cheese" then
+                    fireclickdetector(y)
+                end
+            end
+        else
+            OrionLib:MakeNotification({
+	            Name = "Incompatible Exploit!",
+	            Content = "Your exploit does not support this button.",
+	            Image = "rbxassetid://4483345998",
+	            Time = 5
+            })
+        end
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Get all thing",
+	Callback = function()
+        if fireclickdetector then
+      	    for x, y in pairs(game:GetDescendants()) do
+                if y:IsA("ClickDetector") then
+                    fireclickdetector(y)
+                end
+            end
+        else
+            OrionLib:MakeNotification({
+	            Name = "Incompatible Exploit!",
+	            Content = "Your exploit does not support this button.",
+	            Image = "rbxassetid://4483345998",
+	            Time = 5
+            })
+        end
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Go to end",
+	Callback = function()
+        if firetouchinterest then
+      	    for x, y in pairs(workspace:GetChildren()) do
+                if y.Name == "EndBrick" then
+                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, y, 0)
+                end
+            end
+        else
+            OrionLib:MakeNotification({
+	            Name = "Incompatible Exploit!",
+	            Content = "Your exploit does not support this button.",
+	            Image = "rbxassetid://4483345998",
+	            Time = 5
+            })
+        end
+  	end    
+})
+
+Tab:AddToggle({
+	Name = "Chams for cheeses",
+	Default = false,
+	Callback = function(Value)
+		if Value then
+            for j, s in pairs(workspace.FindCheese:GetDescendants()) do
+                if s:IsA("Highlight") then
+                    s.Enabled = true
+                end
+            end
+        else
+            for j, s in pairs(workspace.FindCheese:GetDescendants()) do
+                if s:IsA("Highlight") then
+                    s.Enabled = false
+                end
+            end
+        end
+	end    
+})
+
+Tab:AddToggle({
+	Name = "Chams for mouse",
+	Default = false,
+	Callback = function(Value)
+		if Value then
+            for j, s in pairs(workspace.Mouse.Mouse:GetChildren()) do
+                if s:IsA("Highlight") then
+                    s.Enabled = true
+                end
+            end
+        else
+            for j, s in pairs(workspace.Mouse.Mouse:GetChildren()) do
+                if s:IsA("Highlight") then
+                    s.Enabled = false
+                end
+            end
+        end
+	end    
+})
+
+Tab2:AddSlider({
+	Name = "Walk Speed",
+	Min = 16,
+	Max = 100,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Speed",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end    
+})
+
+Tab2:AddSlider({
+	Name = "Jump Power",
+	Min = 50,
+	Max = 100,
+	Default = 50,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Power",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+	end    
+})
+
+Tab2:AddButton({
+	Name = "Force close hack",
+	Callback = function()
+        OrionLib:Destroy()
+  	end    
+})
+
+OrionLib:Init()
